@@ -1,0 +1,24 @@
+Question=> Write a function findLongestWord that take string as input and return the longest word in the string. If there more then one return the first encountered.
+Solution=> 
+
+1)   const strValue = "Decide between using a controlled"
+       const arr = strValue.trim().split(' ')
+             let strLongestWord = arr[0];
+               if(arr[0].length === 0){
+                  console.log(false)
+                }else{
+             for(let i =1;i<arr.length;i++){
+               if(strLongestWord.length<arr[i].length){
+                 strLongestWord = arr[i]
+              }
+            }
+           console.log(strLongestWord)
+        }
+
+2)  function findLongestWord(str){
+           if(str.trim().length===0){ return false }
+           let words = str.split(" ")           // convert into array
+           words = words.sort((a,b)=>b.length-a.length)         // arrage in descendng order with there length
+           return words[0]
+        }
+    findLongestWord(strValue)
